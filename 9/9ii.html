@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Stacking</title>
+	<style type="text/css">
+	.img1{position: absolute;top:0;left:0;z-index:0;}
+	.img2{position: absolute;top:0px;left:440px;z-index:0; }
+	.img3{position: absolute;top:0px;left:850px;z-index: 0; }
+	</style>
+</head>
+<body>
+<img class="img1" id="aks1" src="ddd.jpg" onclick="toTop('aks1')"/>
+<img class="img2" id="aks2" src="eee.jpg" onclick="toTop('aks2')"/>
+<img class="img3" id="aks3" src="fff.jpg" onclick="toTop('aks3')"/>
+<script type="text/javascript">
+	function toTop(newTop){
+		var top="aks1";
+		domTop = document.getElementById(top).style;
+		domNew = document.getElementById(newTop).style;
+		domTop.zIndex="0";
+		domNew.zIndex="10";
+		top=newTop;
+	}
+</script>
+</body>
+</html>

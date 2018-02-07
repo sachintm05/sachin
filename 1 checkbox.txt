@@ -1,0 +1,46 @@
+HTML
+
+<html> <head>
+<title>bulb prgm</title>
+</head>
+<body>
+<form method="post" action="http://192.168.1.232/php/first.php" >
+<label><input type="checkbox" name="product[]"value="2.39"/>
+four 100-w light bulbs for $2.39</label><br>
+<label><input type="checkbox" name="product[]"value="4.29"/>
+four 100-w light bulbs for $4.29</label><br>
+<label><input type="checkbox" name="product[]"value="3.95"/>
+four 100-w light bulbs for $3.95</label><br>
+<label><input type="checkbox" name="product[]"value="7.49"/>
+four 100-w light bulbs for $7.49</label><br>
+
+<input type="submit" name="value"/></form>
+</body></html>
+
+
+
+
+PHP
+<html>
+<body>
+<?php
+$dollars=0;
+if(isset($_POST['value']))
+{
+foreach($_POST['product']as $product)
+{
+if(is_numeric($product)&& $product>=0)
+{
+$dollars=$dollars + $product;
+}
+}
+}
+?>
+<p>total cost(without tax):<?php echo $dollars;?>
+</p>
+
+<p>total cost:<?php echo $dollars + $dollars *0.05;?>
+</p>
+</body>
+</html>
+
